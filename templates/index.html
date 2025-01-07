@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supply Chain Disruption Prediction</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            color: #5c6bc0;
+            font-size: 32px;
+            margin-top: 40px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        label {
+            font-size: 18px;
+            color: #444;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #5c6bc0;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4f5bdb;
+        }
+
+        @media screen and (max-width: 600px) {
+            h2 {
+                font-size: 24px;
+            }
+
+            input[type="text"] {
+                width: 100%;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Supply Chain Disruption Prediction</h2>
+    <form method="post" action="/predict/">
+        <label for="items">Enter Item Names (comma-separated): </label>
+        <input type="text" id="items" name="items" required>
+        <button type="submit">Predict Disruptions</button>
+    </form>
+</body>
+</html>
