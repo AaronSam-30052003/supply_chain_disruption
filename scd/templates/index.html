@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supply Chain Disruptions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px #ccc;
+        }
+        form input, form button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            text-align: left;
+            background: white;
+        }
+        table th, table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        table th {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Supply Chain Disruptions</h1>
+    </header>
+    <form id="disruptionForm">
+        <h3>Add New Disruption</h3>
+        <input type="text" name="location" placeholder="Location" required>
+        <input type="text" name="cause" placeholder="Cause" required>
+        <input type="text" name="impact" placeholder="Impact" required>
+        <input type="date" name="date" required>
+        <button type="submit">Add Disruption</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Location</th>
+                <th>Cause</th>
+                <th>Impact</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody id="disruptionTable">
+            {% for disruption in disruptions %}
+            <tr>
+                <td>{{ disruption.id }}</td>
+                <td>{{ disruption.location }}</td>
+                <td>{{ disruption.cause }}</td>
+                <td>{{ disruption.impact }}</td>
+                <td>{{ disruption.date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        document.getElementById("disruptionForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData.entries());
+            const response = await fetch("/add-disruption/", {
+                method: "POST",
+                body: new URLSearchParams(data),
+                headers: { "Content-Type": "application/x-www-form-urlencoded" }
+            });
+            if (response.ok) {
+                alert("Disruption added successfully");
+                location.reload();
+            } else {
+                alert("Failed to add disruption");
+            }
+        });
+    </script>
+</body>
+</html>
