@@ -58,5 +58,5 @@ SMTP for email alerts
 
 ![image alt](https://github.com/AaronSam-30052003/supply_chain_disruption/blob/42c4ede7c0ab69363f414f8bd9abc87d1fbccdad/supply_chain_disruption_risk_prediction/dashboard%20output.png)
 
-![image alt]()
+![image alt](https://github.com/AaronSam-30052003/supply_chain_disruption/blob/fac242abb2ab5e52cbbca3f7498734070cfd28af/supply_chain_disruption_risk_prediction/alert%20output.png)
 
