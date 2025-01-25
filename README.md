@@ -54,4 +54,7 @@ Python-Dotenv
 
 SMTP for email alerts
 
+## Screenshots
+
+![image alt]()
 
