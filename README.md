@@ -16,17 +16,17 @@ This project is a web-based application built with FastAPI for predicting supply
 
 ## Tech Stack
 
-Backend: FastAPI
+-Backend: FastAPI
 
-Frontend: HTML, CSS, JavaScript
+-Frontend: HTML, CSS, JavaScript
 
-Machine Learning: XGBoost
+-Machine Learning: XGBoost
 
-Database: Environment-based setup (optional)
+-Database: Environment-based setup (optional)
 
-Email Integration: SMTP
+-Email Integration: SMTP
 
-Environment Variables: Managed using dotenv
+-Environment Variables: Managed using dotenv
 
 ## Usage
 
